@@ -1,0 +1,45 @@
+EXECUTIVE KPI DASHBOARD – ONE-PAGE POWER BI LAYOUT
+
+PAGE SIZE:
+16:9 desktop canvas.
+
+TOP:
+Title: Executive KPI Dashboard
+Subtitle: Sales, Profitability & Order Performance
+
+ROW 1 – KPI CARDS:
+[Total Sales] [Total Profit] [Profit Margin] [Total Orders] [Average Order Value]
+
+ROW 2:
+Left (wide): Monthly Sales Trend – Line chart
+Right: Sales by Region – Horizontal bar chart
+
+ROW 3:
+Left: Sales & Profit by Category – Clustered column chart
+Middle: Top 5 Sub-Categories – Bar chart
+Right: Management filters – Year, Region, Category, Segment
+
+INTERACTION:
+All slicers should cross-filter the KPI cards and charts.
+Use tooltips for detailed values.
+Keep legends short and avoid unnecessary decorative visuals.
+
+COLOR / FORMATTING:
+Use a clean corporate theme, consistent number formats and restrained use of color.
+Sales: currency with K/M units.
+Profit: currency with K/M units.
+Profit Margin: percentage with one decimal.
+Orders: whole number.
+AOV: currency with one decimal.
+
+POWER BI BUILD STEPS:
+1. Get Data -> Text/CSV -> Superstore_Executive_KPI_Data.csv
+2. Set Order_Date and Ship_Date to Date.
+3. Create a Date table using the DAX supplied.
+4. Create a one-to-many relationship Date[Date] -> Superstore[Order_Date].
+5. Create the KPI measures.
+6. Add KPI cards and the recommended charts.
+7. Add slicers for Year, Region, Category, Segment.
+8. Format the page to one-screen view.
+9. Test every slicer and cross-filter interaction.
+10. Save the final report as Task_26_Executive_KPI_Dashboard.pbix.

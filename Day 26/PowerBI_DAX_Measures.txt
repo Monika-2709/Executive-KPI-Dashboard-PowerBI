@@ -1,0 +1,48 @@
+-- EXECUTIVE KPI DASHBOARD – TASK 26
+-- Create these measures after importing Superstore_Executive_KPI_Data.csv
+
+Total Sales =
+SUM(Superstore[Sales])
+
+Total Profit =
+SUM(Superstore[Profit])
+
+Profit Margin =
+DIVIDE([Total Profit], [Total Sales], 0)
+
+Total Orders =
+DISTINCTCOUNT(Superstore[Order_ID])
+
+Average Order Value =
+DIVIDE([Total Sales], [Total Orders], 0)
+
+Total Quantity =
+SUM(Superstore[Quantity])
+
+Average Discount =
+AVERAGE(Superstore[Discount])
+
+Sales LY =
+CALCULATE(
+    [Total Sales],
+    SAMEPERIODLASTYEAR('Date'[Date])
+)
+
+Sales YoY % =
+DIVIDE([Total Sales] - [Sales LY], [Sales LY], 0)
+
+-- Suggested Date table:
+Date =
+CALENDAR(
+    MIN(Superstore[Order_Date]),
+    MAX(Superstore[Order_Date])
+)
+
+-- Add these columns to Date:
+Year = YEAR('Date'[Date])
+Month = FORMAT('Date'[Date], "MMM")
+Month Number = MONTH('Date'[Date])
+Year Month = FORMAT('Date'[Date], "YYYY-MM")
+
+-- Relationship:
+'Date'[Date] 1 --> * Superstore[Order_Date]

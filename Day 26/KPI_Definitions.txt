@@ -1,0 +1,39 @@
+EXECUTIVE KPI DEFINITIONS – TASK 26
+
+1. Total Sales
+Definition: Total revenue generated from all orders in the selected filter context.
+DAX: Total Sales = SUM(Superstore[Sales])
+
+2. Total Profit
+Definition: Total profit generated after the estimated cost of goods and discounts.
+DAX: Total Profit = SUM(Superstore[Profit])
+
+3. Profit Margin
+Definition: Profit as a percentage of sales.
+DAX: Profit Margin = DIVIDE([Total Profit], [Total Sales], 0)
+
+4. Total Orders
+Definition: Number of unique orders.
+DAX: Total Orders = DISTINCTCOUNT(Superstore[Order_ID])
+
+5. Average Order Value
+Definition: Average sales value per unique order.
+DAX: Average Order Value = DIVIDE([Total Sales], [Total Orders], 0)
+
+Recommended slicers:
+- Year
+- Region
+- Category
+- Segment
+- Ship Mode
+
+Recommended visuals:
+- KPI cards: Total Sales, Total Profit, Profit Margin, Total Orders
+- Line chart: Sales by Month
+- Bar chart: Sales and Profit by Category
+- Bar chart: Sales by Region
+- Small table: Top 5 Sub-Categories by Sales
+- Slicers: Year, Region, Category, Segment
+
+Design rule:
+Keep the page focused on 4–5 KPIs and only the visuals needed for management decisions.
